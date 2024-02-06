@@ -5,9 +5,6 @@ abstract class BlueButton {
     backgroundColor: MaterialStatePropertyAll(
       Colors.blueAccent.shade400,
     ),
-    overlayColor: MaterialStatePropertyAll(
-      Colors.blueAccent.shade200,
-    ),
     textStyle: const MaterialStatePropertyAll(
       TextStyle(
         fontSize: 16,

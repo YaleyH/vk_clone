@@ -19,9 +19,15 @@ class AuthorizationPage extends StatelessWidget {
               Container(
                 child: Column(
                   children: [
-                    Image.asset('assets/logo/logo.png', width: 70,),
+                    Image.asset(
+                      'assets/logo/logo.png',
+                      width: 70,
+                    ),
                     const SizedBox(height: 10),
-                    const Text('Вход Вконтакте', style: TextMain.style),
+                    const Text(
+                      'Вход Вконтакте',
+                      style: TextMain.style,
+                    ),
                   ],
                 ),
               ),
@@ -29,7 +35,7 @@ class AuthorizationPage extends StatelessWidget {
               Container(
                 height: 50,
                 child: TextField(
-                  decoration: TextFieldAuth.style
+                  decoration: TextFieldAuth.style,
                 ),
               ),
               const SizedBox(height: 20),
@@ -37,9 +43,11 @@ class AuthorizationPage extends StatelessWidget {
                 height: 45,
                 width: double.infinity,
                 child: ElevatedButton(
-                  onPressed: () {},
+                  onPressed: () {
+                    Navigator.of(context).pushNamed('/password');
+                  },
                   child: const Text('Войти'),
-                  style: BlueButton.style
+                  style: BlueButton.style,
                 ),
               ),
               const Expanded(child: SizedBox()),

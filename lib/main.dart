@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:vk_app/pages/auth_page.dart';
 import 'package:vk_app/pages/code_verifacation.dart';
 import 'package:vk_app/pages/home_page.dart';
+import 'package:vk_app/pages/main_page.dart';
+import 'package:vk_app/pages/password_page.dart';
 import 'package:vk_app/pages/registration_page.dart';
 
 void main() {
@@ -26,6 +28,8 @@ class _MyAppState extends State<MyApp> {
       routes: {
         '/auth' : (context) => const AuthorizationPage(),
         '/registration' : (context) => const RegistrationPage(),
+        '/password' : (context) => const PasswordPage(),
+        '/main' : (context) => const MainPage(),
       },
     );
   }

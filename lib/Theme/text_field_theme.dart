@@ -8,18 +8,15 @@ abstract class TextFieldAuth{
     fillColor: Colors.grey.withOpacity(0.1),
     enabledBorder: OutlineInputBorder(
       borderRadius: BorderRadius.circular(10),
-      borderSide: BorderSide(width: 1),
+      borderSide: BorderSide(
+        color: Colors.blueAccent.shade100,
+        width: 2,
+      ),
     ),
     focusedBorder: OutlineInputBorder(
       borderRadius: BorderRadius.circular(10),
       borderSide: const BorderSide(
         color: Colors.blueAccent,
-        width: 2,
-      ),
-    ),
-    errorBorder: OutlineInputBorder(
-      borderRadius: BorderRadius.circular(10),
-      borderSide: const BorderSide(
         width: 2,
       ),
     ),
@@ -41,10 +38,10 @@ abstract class TextFieldNumber{
         ),
       ),
       child: Container(
-        child: const Text(
-          '+7', style: TextStyle(
-            fontSize: 15
-        ),
+        child: const
+        Text(
+          '+7',
+          style: TextStyle(fontSize: 15),
           textAlign: TextAlign.center,
         ),
       ),
@@ -57,7 +54,8 @@ abstract class TextFieldNumber{
     ),
     enabledBorder: OutlineInputBorder(
       borderRadius: BorderRadius.circular(10),
-      borderSide: const BorderSide(color: Colors.blueAccent, width: 2),
+      borderSide: BorderSide( color: Colors.blueAccent.shade100,
+        width: 2,),
     ),
   );
 }

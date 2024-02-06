@@ -31,30 +31,34 @@ class _CodeVerificationState extends State<CodeVerification> {
       } else {
         timer.cancel();
       }
-      if (verifyController.text.length == 6){
-        timer.cancel();
-      }
     });
     super.initState();
   }
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      resizeToAvoidBottomInset: false,
       appBar: AppBar(
         leading: IconButton(
           splashRadius: 25,
           onPressed: () {
             Navigator.of(context).pop();
-          }, icon: Icon(Icons.arrow_back, color: Colors.blueAccent.shade400,),),
+          },
+          icon: Icon(
+            Icons.arrow_back,
+            color: Colors.blueAccent.shade400,
+          ),
+        ),
         title: Row(
           mainAxisSize: MainAxisSize.min,
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Image.asset('assets/logo/logo.png', width: 30),
-            const Text('ID', style: TextStyle(
-              color: Colors.black,
-            ),),
+            const Text(
+              'ID',
+              style: TextStyle(
+                color: Colors.black,
+              ),
+            ),
           ],
         ),
         centerTitle: true,

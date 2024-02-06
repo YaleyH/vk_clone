@@ -12,7 +12,7 @@ class _HomePageState extends State<HomePage> {
   @override
   void initState() {
     Timer(const Duration(seconds: 2), () {
-      Navigator.of(context).pushNamed('/auth');
+      Navigator.of(context).pushReplacementNamed('/auth');
     });
     super.initState();
   }

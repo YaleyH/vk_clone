@@ -15,21 +15,28 @@ class _RegistrationPageState extends State<RegistrationPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      resizeToAvoidBottomInset: false,
       appBar: AppBar(
         leading: IconButton(
           splashRadius: 25,
           onPressed: () {
             Navigator.of(context).pushNamed('/auth');
-          }, icon: Icon(Icons.arrow_back, color: Colors.blueAccent.shade400,),),
+          },
+          icon: Icon(
+            Icons.arrow_back,
+            color: Colors.blueAccent.shade400,
+          ),
+        ),
         title: Row(
           mainAxisSize: MainAxisSize.min,
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Image.asset('assets/logo/logo.png', width: 30),
-            Text('ID', style: TextStyle(
-              color: Colors.black,
-            ),),
+            const Text(
+              'ID',
+              style: TextStyle(
+                color: Colors.black,
+              ),
+            ),
           ],
         ),
         centerTitle: true,
@@ -42,56 +49,65 @@ class _RegistrationPageState extends State<RegistrationPage> {
         height: double.infinity,
         child: Column(
           children: [
-            SizedBox(height: 10),
+            const SizedBox(height: 10),
             const Text(
               'Введите номер',
               style: TextMain.style,
             ),
-            SizedBox(height: 15),
+            const SizedBox(height: 15),
             Text(
               'Ваш номер телефона будет использоваться\nдля входа в аккаунт',
               style: SubText.style,
               textAlign: TextAlign.center,
             ),
-            SizedBox(height: 20),
+            const SizedBox(height: 20),
             Container(
               alignment: Alignment.center,
               height: 50,
               child: TextField(
-                onChanged: (value){
-                  setState(() {
-                    myController;
-                  });
-                },
-                controller: myController,
-                keyboardType: TextInputType.number,
-                maxLength: 17,
-                autofocus: true,
-                decoration: TextFieldNumber.style
-              ),
+                  onChanged: (value) {
+                    setState(() {
+                      myController;
+                    });
+                  },
+                  controller: myController,
+                  keyboardType: TextInputType.number,
+                  maxLength: 17,
+                  autofocus: true,
+                  decoration: TextFieldNumber.style),
             ),
             const Expanded(child: SizedBox()),
             Container(
               height: 45,
               width: double.infinity,
               child: ElevatedButton(
-                onPressed: myController.text.length >= 5 ? () {
-                  Navigator.push(context, MaterialPageRoute(builder: (context) => CodeVerification(myController: myController),),);
-                } : null,
+                onPressed: myController.text.length >= 5
+                    ? () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) =>
+                                CodeVerification(myController: myController),
+                          ),
+                        );
+                      }
+                    : null,
                 child: const Text('Продолжить'),
                 style: ElevatedButton.styleFrom(
-                  backgroundColor: myController.text.length <= 5 ? null
+                  surfaceTintColor: Colors.orange,
+                  backgroundColor: myController.text.length <= 5
+                      ? null
                       : Colors.blueAccent.shade400,
                   foregroundColor: Colors.white,
-                    textStyle: const TextStyle(
-                      fontSize: 16,
-                      fontWeight: FontWeight.w500
-                    ),
+                  textStyle: const TextStyle(
+                    fontSize: 16,
+                    fontWeight: FontWeight.w500,
+                  ),
                   disabledForegroundColor: Colors.white.withOpacity(0.8),
                   disabledBackgroundColor: Colors.blueAccent.shade100,
                   shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(5)
-                  )
+                    borderRadius: BorderRadius.circular(5),
+                  ),
                 ),
               ),
             ),
