@@ -3,7 +3,8 @@ import 'package:flutter/material.dart';
 abstract class TextMain{
   static const style = TextStyle(
       fontSize: 20,
-      fontFamily: 'vk-sans'
+      fontFamily: 'vk-sans',
+      color: Colors.black
   );
 }
 
